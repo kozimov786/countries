@@ -29,7 +29,6 @@ const NavBar = styled.div`
  background: #FFFFFF;
  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
  margin-bottom: 48px;
-
  .container{
       display: flex;
       align-items: center;
@@ -43,12 +42,18 @@ const NavBar = styled.div`
   font-weight: 800;
   font-size: 24px;
   line-height: 33px;
+  white-space: nowrap;
   margin: 0;
  }
-
+ @media only screen and (max-width:450px){
+   h1{
+     font-size:20px;
+   }
+ }
 `
 const ThemeWrapper = styled.div`
  display: flex;
  align-items: center;
+ white-space:nowrap;
 `
 export default Nav;

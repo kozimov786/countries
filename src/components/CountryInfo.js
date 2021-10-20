@@ -62,7 +62,7 @@ const CountryInfo = ({ selected, theme }) => {
                   </Flex>
                 </dl>
               </InfoBox>
-              <p>Borders:{`${selected.borders ? selected.borders.map((border, index) => <Border key={index}>{border}</Border>) : ""}`}</p>
+              <p>Borders:{""}{selected.borders.map((border, index) => <Border key={index}>{border}</Border>)}</p>
             </div>
           </CountryDetails>
         </Info>
@@ -87,6 +87,7 @@ const Back = styled.div`
   .arrow{
     margin-right: 10px;
   }
+
 `
 const CountryDetails = styled.div`
   display: flex;
@@ -103,7 +104,23 @@ const CountryDetails = styled.div`
     height: 401px;
     margin-right: 120px;
   }
-
+  @media only screen and (max-width:1250px){
+  img{
+    margin-right: 60px;
+  }
+ }
+ @media only screen and (max-width:1150px){
+   flex-direction: column;
+   img{
+     margin-right: 0;
+     margin-bottom: 30px;
+   }
+ }
+ @media only screen and (max-width:652px){
+   img{
+     width: 100%;
+   }
+ }
 `
 const Flex = styled.div`
  display: flex;
@@ -112,12 +129,18 @@ const Flex = styled.div`
  dd{
    margin-left: 5px;
  }
+
 `
 const InfoBox = styled.div`
   display: flex;
   .first-dl{
     margin-right: 141px;
   }
+  @media only screen and (max-width:652px){
+   flex-direction: column;
+   text-align: center;
+ }
+
 `
 const Border = styled.span`
    background: #FFFFFF;

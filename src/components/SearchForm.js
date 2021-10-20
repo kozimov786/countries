@@ -42,6 +42,10 @@ const FormWrapper = styled.div`
     padding: 18px 32px;
     border: none;
   }
+  @media only screen and (max-width:500px){
+   flex-direction: column;
+   }
+
 `
 const InputWrapper = styled.div`
    background: #FFFFFF;
@@ -51,6 +55,12 @@ const InputWrapper = styled.div`
     width: 480px;
     display:flex;
     align-items: center;
-
+    @media only screen and (max-width:800px){
+    width: 200px;
+   }
+   @media only screen and (max-width:500px){
+    width: 70%;
+    margin-bottom: 20px;
+   }
 `
 export default SearchForm;

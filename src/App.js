@@ -57,9 +57,18 @@ const List = styled.div`
  padding-top: 30px;
  padding-bottom: 30px;
  display: grid;
- grid-template-columns: repeat( 4, minmax(264px, 1fr) );
+ grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
  row-gap: 75px;
  column-gap: 75px;
+ @media only screen and (max-width:632px){
+  column-gap: 15px;
+ }
+ @media only screen and (max-width:632px){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
 `
 
 export default App;
