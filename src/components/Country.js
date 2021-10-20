@@ -2,17 +2,17 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Country = ({ country, click }) => {
+const Country = ({ theme, country, click }) => {
 
   return (
 
-    <Card>
+    <Card className={`${theme ? "" : "darker"}`}>
       <div>
         <img src={country.flags.png} alt={`${country.name} flags`} />
       </div>
       <CardInfo>
         <Link to='/info'>
-          <h2 onClick={click}>{country.name}</h2>
+          <h2 className={`${theme ? "" : "dark-color"}`} onClick={click}>{country.name}</h2>
         </Link>
         <dl>
           <dt>Population:</dt>

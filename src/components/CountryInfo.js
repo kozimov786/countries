@@ -2,16 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const CountryInfo = ({ selected }) => {
-
-
-
+const CountryInfo = ({ selected, theme }) => {
   return (
     <>
       {selected && (
         <Info>
           <Link to='/'>
-            <Back>
+            <Back className={`${theme ? "" : "darker"}`}>
               <span className='arrow'>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g id="call-made">
@@ -60,12 +57,12 @@ const CountryInfo = ({ selected }) => {
                     <dd>{selected.currencies[0].name}</dd>
                   </Flex>
                   <Flex>
-                    <dt>Languages:</dt>
+                    <dt>Languages:{""}</dt>
                     {selected.languages.map((lang, index) => <dd key={index}>{lang.name},</dd>)}
                   </Flex>
                 </dl>
               </InfoBox>
-              <p>Borders:{selected.borders.map((border, index) => <Border key={index}>{border}</Border>)}</p>
+              <p>Borders:{`${selected.borders ? selected.borders.map((border, index) => <Border key={index}>{border}</Border>) : ""}`}</p>
             </div>
           </CountryDetails>
         </Info>
@@ -75,7 +72,7 @@ const CountryInfo = ({ selected }) => {
 }
 const Info = styled.div`
   padding-top: 32px;
-
+  padding-bottom: 110px;
 `
 
 const Back = styled.div`
